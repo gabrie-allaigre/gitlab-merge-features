@@ -1,0 +1,41 @@
+{
+  "name": "gitlab-merge-features",
+  "version": "1.0.0",
+  "description": "Cli to merge multiple gitlab merge request",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "eslint": "eslint",
+    "test": "jest",
+    "prepublish": "npm run build",
+    "publish": "npm publish"
+  },
+  "bin": {
+    "gitlab-merge": "dist/cli.js"
+  },
+  "author": "Gabriel Allaigre",
+  "license": "ISC",
+  "dependencies": {
+    "@gitbeaker/node": "^35.8.1",
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "lodash": "^4.17.21",
+    "luxon": "^3.4.4",
+    "simple-git": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.6",
+    "@types/luxon": "^3.4.2",
+    "@types/node": "^20.14.10",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "eslint": "^8.35.0",
+    "jest": "^29.7.0",
+    "nock": "^13.5.4",
+    "ts-jest": "^29.2.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  },
+  "files": [
+    "dist/**"
+  ]
+}
