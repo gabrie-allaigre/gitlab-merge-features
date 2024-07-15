@@ -21,6 +21,7 @@ export const createProgram = () => {
     .option('-d, --destination-branch <string>', 'Destination branch', 'dev')
     .option('--no-pipeline', 'No check pipeline', false)
     .option('--accept-draft', 'Merge draft merge request', false)
+    .option('--dry-run', 'No push', false)
     .action(async (opts, cmd) => {
       return merge(cmd);
     });

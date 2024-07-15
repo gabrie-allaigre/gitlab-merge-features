@@ -19,13 +19,14 @@ interface Options {
   destinationBranch: string;
   noPipeline: boolean;
   acceptDraft: boolean;
+  dryRun: boolean;
 }
 
 export async function merge(command: Command): Promise<void> {
   const {
     gitlabUrl, token, projectId,
     branchPattern, clone, dir, sourceBranch,
-    destinationBranch, noPipeline, acceptDraft
+    destinationBranch, noPipeline, acceptDraft, dryRun
   } = command.optsWithGlobals<Options>();
 
   const api = new Gitlab({
@@ -97,8 +98,12 @@ export async function merge(command: Command): Promise<void> {
     }
   }
 
-  console.info(chalk.black(`Push force to ${destinationBranch}`));
-  await git.push(['-f', 'origin', `HEAD:${destinationBranch}`]);
+  if (!dryRun) {
+    console.info(chalk.black(`Push force to ${destinationBranch}`));
+    await git.push(['-f', 'origin', `HEAD:${destinationBranch}`]);
+  } else {
+    console.info(chalk.black(`Dry run, no push`));
+  }
 }
 
 async function verifyPipeline(api: InstanceType<typeof Gitlab>, mr: Types.MergeRequestSchema): Promise<string | undefined> {

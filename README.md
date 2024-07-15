@@ -20,3 +20,4 @@ npx --no-install gitlab-merge merge --token $CI_TOKEN --project-id $CI_PROJECT_I
 - `--destination-branch` Target branch, default `dev`
 - `--no-pipeline` Disable check pipeline, default `false`
 - `--accept-draft` Accept draft MR, default `false`
+- `--dry-run` Dry run, default `false`
