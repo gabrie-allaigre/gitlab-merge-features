@@ -1,16 +1,19 @@
 {
   "name": "gitlab-merge-features",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Cli to merge multiple gitlab merge request",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "eslint": "eslint",
     "test": "jest",
-    "prepublish": "npm run build",
-    "publish": "npm publish"
+    "prepublish": "npm run build"
   },
   "bin": {
     "gitlab-merge": "dist/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrie-allaigre/gitlab-merge-features.git"
   },
   "author": "Gabriel Allaigre",
   "license": "ISC",

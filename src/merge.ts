@@ -94,7 +94,7 @@ export async function merge(command: Command): Promise<void> {
         console.info(chalk(chalk.redBright(`Merge request for ${mr.source_branch}, pipeline is ${ps ?? 'not-found'}`)));
       }
     } else {
-      console.info(chalk(chalk.redBright(`Merge request for ${mr.source_branch} is ignored`)));
+      console.info(chalk(chalk.redBright(`Merge request for ${mr.source_branch} is ignored because status is ${status}`)));
     }
   }
 
