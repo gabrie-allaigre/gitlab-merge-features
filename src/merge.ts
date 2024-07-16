@@ -140,7 +140,7 @@ async function mergeMr(api: Resources.Gitlab, git: SimpleGit, mr: Types.MergeReq
 async function checkMergeRequestStatus(api: Resources.Gitlab, mr: Types.MergeRequestSchema): Promise<string> {
   let count = 0;
   while (count < 10) {
-    if (mr.detailed_merge_status !== 'unchecked' && mr.detailed_merge_status !== 'checked') {
+    if (mr.detailed_merge_status !== 'unchecked' && mr.detailed_merge_status !== 'checking') {
       return mr.detailed_merge_status as string;
     }
 

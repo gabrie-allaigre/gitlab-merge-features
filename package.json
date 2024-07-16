@@ -1,6 +1,6 @@
 {
   "name": "gitlab-merge-features",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Cli to merge multiple gitlab merge request",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
